@@ -11,7 +11,7 @@ import rospy
 from robotiq_2f_gripper_control.msg import Robotiq2FGripper_robot_output as outputMsg
 from robotiq_2f_gripper_control.msg import Robotiq2FGripper_robot_input as inputMsg
 
-class Robotiq2FGGripperControl():
+class Robotiq2FGGripperControl:
     def __init__(self):
         self.cur_status = None
         self.status_sub = rospy.Subscriber('Robotiq2FGripperRobotInput', inputMsg,
