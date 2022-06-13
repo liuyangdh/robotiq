@@ -1,11 +1,6 @@
-#!/usr/bin/env python3
-
 from __future__ import print_function
 
 import numpy as np
-
-import roslib
-roslib.load_manifest('robotiq_2f_gripper_control')
 
 import rospy
 from robotiq_2f_gripper_control.msg import Robotiq2FGripper_robot_output as outputMsg
