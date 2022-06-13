@@ -1,5 +1,50 @@
 # Robotiq
 
+## Installation
+
+```bash
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+git clone git@github.com:liuyangdh/robotiq.git
+cd ..
+sudo apt-get update
+rosdep update
+rosdep install --from-paths src --ignore-src -y
+catkin_make
+source devel/setup.bash
+```
+
+## Network setup
+detail see this [link](http://wiki.ros.org/robotiq/Tutorials/Control%20of%20a%203-Finger%20Gripper%20using%20the%20Modbus%20TCP%20Protocol)
+
+IPv4 settings:
+
+Address: 192.168.1.2
+
+Netmask: 255.255.255.0
+
+## Run demo
+1st terminal: open roscore
+```bash
+sourc /opt/ros/noetic/setup.bash
+roscore
+```
+
+2nd terminal: run the gripper driver node
+```bash
+source /opt/ros/noetic/setup.bash
+source devel/setup.bashp
+rosrun robotiq_2f_gripper_control Robotiq2FGripperTcpNode.py 192.168.1.11
+```
+
+3rd terminal: run the griper control node 
+```bash
+source /opt/ros/noetic/setup.bash
+source devel/setup.bashp
+rosrun robotiq_2f_gripper_control robotiq_2f_gripper_ctrl.py
+```
+
+
 ## Status
 
 As of 2021-05-28, it would appear this repository is ***unmaintained***.
