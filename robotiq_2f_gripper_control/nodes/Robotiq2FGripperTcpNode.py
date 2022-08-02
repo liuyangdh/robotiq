@@ -78,12 +78,6 @@ def mainLoop(address):
       #Wait a little
       rospy.sleep(0.05)
 
-      #Send the most recent command
-      gripper.sendCommand()
-
-      #Wait a little
-      rospy.sleep(0.05)
-
 if __name__ == '__main__':
     try:
         #TODO: Add verification that the argument is an IP address
