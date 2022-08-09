@@ -76,7 +76,7 @@ def mainLoop(address):
       pub.publish(status)
 
       #Wait a little
-      rospy.sleep(0.05)
+      rospy.sleep(5e-3)
 
 if __name__ == '__main__':
     try:
