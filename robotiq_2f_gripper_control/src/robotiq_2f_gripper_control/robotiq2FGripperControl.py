@@ -129,7 +129,7 @@ class Robotiq2FGGripperControl:
         cmd.rSP = int(np.clip(255./(0.1-0.013) * (vel-0.013), 0, 255))
         cmd.rFR = int(np.clip(255./(100.-30.) * (force-30.), 0, 255))
         self.cmd_pub.publish(cmd)
-        rospy.sleep(0.1)
+        # rospy.sleep(0.1)
         if block:
             if not self.wait_until_moving(timeout):
                 return False
