@@ -11,7 +11,7 @@ class Robotiq2FGGripperControl:
         self.cur_status = None
         self.status_sub = rospy.Subscriber('Robotiq2FGripperRobotInput', inputMsg,
                                            self._status_cb)
-        self.cmd_pub = rospy.Publisher('Robotiq2FGripperRobotOutput', outputMsg)
+        self.cmd_pub = rospy.Publisher('Robotiq2FGripperRobotOutput', outputMsg, queue_size=10)
 
     def _status_cb(self, msg):
         self.cur_status = msg
